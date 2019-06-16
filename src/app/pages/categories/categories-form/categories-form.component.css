@@ -1,0 +1,6 @@
+<app-page-header
+  [page-title]="pageTitle"
+  button-text="<< Voltar"
+  button-link="/categories"
+  button-class="btn-light"
+></app-page-header>
