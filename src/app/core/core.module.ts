@@ -1,9 +1,13 @@
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDatabase } from '../in-memory-database';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { NavBarComponent } from '../core/nav-bar/nav-bar.component';
 
@@ -14,8 +18,9 @@ import { NavBarComponent } from '../core/nav-bar/nav-bar.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule
-   // HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase),
+    RouterModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase),
+    ToastrModule.forRoot()
   ],
   exports: [
     //shared modules
