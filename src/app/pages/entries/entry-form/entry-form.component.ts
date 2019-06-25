@@ -46,7 +46,7 @@ export class EntryFormComponent extends BaseResourceFormComponent<Entry> impleme
     protected categoryService: CategoryService,
     protected injector: Injector
   ) {
-    super(injector, new Entry(), entryService, Entry.fromJson)
+    super(injector, new Entry(), entryService, Entry.assign)
   }
 
   ngOnInit() {

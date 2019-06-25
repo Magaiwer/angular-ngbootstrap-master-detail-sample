@@ -127,7 +127,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
     this.router
       .navigateByUrl(baseComponentPath, { skipLocationChange: true })
       .then(() =>
-        this.router.navigate([baseComponentPath, resource.id, 'edit'])
+        this.router.navigate([baseComponentPath])
       );
   }
 

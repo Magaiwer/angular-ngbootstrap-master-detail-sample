@@ -2,4 +2,13 @@
 
 @import '~ngx-toastr/toastr';
 
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
 
+
+@media (max-width: 768px) {
+  .btn, .btn-group {
+      width:100%;
+  }
+}

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {CalendarModule} from 'primeng/calendar';
 
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
@@ -14,7 +14,8 @@ import { ServerErrorMessagesComponent } from './components/server-error-messages
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    NgbModule
+
+    CalendarModule
   ],
   declarations: [
     BreadCrumbComponent,
@@ -27,7 +28,6 @@ import { ServerErrorMessagesComponent } from './components/server-error-messages
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    NgbModule,
 
     // shared components
     BreadCrumbComponent,

@@ -16,7 +16,7 @@
       <th>Lançamento</th>
       <th>Categoria</th>
       <th class="text-right">Valor R$</th>
-      <th class="text-center">Ações</th>
+      <th class="table-actions">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -37,8 +37,8 @@
         <span class="badge badge-light">{{entry.paidText}}</span>
       </td>
       <td class="text-center">
-        <a [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="deleteResource(entry)" class="btn btn-outline-danger btn-sm">Excluir</button>
+        <a [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-md mr-0">Editar</a>
+        <button (click)="deleteResource(entry)" class="btn btn-outline-danger btn-md mr-0 ">Excluir</button>
       </td>
     </tr>
   </tbody>

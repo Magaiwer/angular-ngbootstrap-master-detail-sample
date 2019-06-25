@@ -20,7 +20,7 @@
     <div class="card-body">
       <div class="form-row">
         <!-- type -->
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-3">
           <label for="type">Tipo</label>
 
           <select name="type" id="type" formControlName="type" class="form-control">
@@ -31,7 +31,7 @@
         </div>
 
         <!-- name -->
-        <div class="form-group col-md-5">
+        <div class="form-group col-md-4">
           <label for="name">Lançamento</label>
           <input type="text" class="form-control" id="name" formControlName="name">
 
@@ -71,13 +71,19 @@
 
       <div class="form-row">
         <!-- paid -->
-        <div class="form-group col-md-2">
-          <label for="paid">Pago</label>
-          <div class="btn-group">
-            <label (click)="resourceForm.get('paid').setValue(true)" [class.active]="resourceForm.get('paid').value == true" class="btn btn-outline-info">
+        <div class="form-group col-md-3 ">
+          <label>Pago</label>
+          <div class="btn-group " >
+            <label  (click)="resourceForm.get('paid').setValue(true)"
+                    [class.active]="resourceForm.get('paid').value"
+                     class="btn btn-outline-info form-control"
+                     >
               Pago
             </label>
-            <label (click)="resourceForm.get('paid').setValue(false)" [class.active]="resourceForm.get('paid').value == false" class="btn btn-outline-info">
+
+            <label  (click)="resourceForm.get('paid').setValue(false)"
+                    [class.active]="!resourceForm.get('paid').value"
+                    class="btn btn-outline-info form-control">
               Pendente
             </label>
           </div>
@@ -86,7 +92,7 @@
         </div>
 
         <!-- categoryId -->
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-4">
           <label for="categoryId">Categoria</label>
 
           <select name="categoryId" id="categoryId" formControlName="categoryId" class="form-control">
@@ -97,19 +103,20 @@
         </div>
 
         <!-- description -->
-        <div class="form-group col-md-7">
+        <div class="form-group col-md-5">
           <label for="description">Descrição</label>
           <input type="text" class="form-control" id="description" formControlName="description">
 
           <app-form-field-error [form-control]="resourceForm.get('description')"></app-form-field-error>
         </div>
+
       </div>
     </div>
   </div>
 
   <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
 
-  <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
+  <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3 mb-3">
     Salvar
   </button>
 

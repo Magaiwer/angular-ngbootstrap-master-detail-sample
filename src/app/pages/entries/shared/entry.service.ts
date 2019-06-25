@@ -16,7 +16,7 @@ import * as moment from 'moment';
 export class EntryService extends BaseResourceService<Entry> {
 
   constructor(protected injector: Injector, private categoryService: CategoryService) {
-    super('api/entries', injector, Entry.fromJson);
+    super('api/entries', injector);
   }
 
   create(entry: Entry): Observable<Entry> {
@@ -24,13 +24,13 @@ export class EntryService extends BaseResourceService<Entry> {
   }
 
   update(entry: Entry): Observable<Entry> {
-    return this.setCategoryAndSendToServer(entry, super.update.bind(this))
+    return this.setCategoryAndSendToServer(entry, super.update.bind(this));
   }
 
   getByMonthAndYear(month: number, year: number): Observable<Entry[]> {
     return this.getAll().pipe(
       map(entries => this.filterByMonthAndYear(entries, month, year))
-    )
+    );
   }
 
 
@@ -53,7 +53,7 @@ export class EntryService extends BaseResourceService<Entry> {
       if (monthMatches && yearMatches) {
         return entry;
       }
-    })
+    });
   }
 
 }

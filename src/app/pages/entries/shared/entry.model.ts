@@ -1,5 +1,5 @@
-import { BaseResourceModel } from "../../../shared/models/base-resource.model";
-import { Category } from "../../categories/shared/category.model";
+import { BaseResourceModel } from '../../../shared/models/base-resource.model';
+import { Category } from '../../categories/shared/category.model';
 
 export class Entry extends BaseResourceModel{
   constructor(
@@ -12,7 +12,7 @@ export class Entry extends BaseResourceModel{
     public paid?: boolean,
     public categoryId?: number,
     public category?: Category
-  ){ 
+  ){
     super();
   }
 
@@ -22,9 +22,10 @@ export class Entry extends BaseResourceModel{
     revenue: 'Receita'
   };
 
-  static fromJson(jsonData: any): Entry {
+  static assign(jsonData: any): Entry {
     return Object.assign(new Entry(), jsonData);
   }
+
 
   get paidText(): string {
     return this.paid ? 'Pago' : 'Pedente';

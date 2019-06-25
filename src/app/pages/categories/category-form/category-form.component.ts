@@ -15,7 +15,7 @@ import { BaseResourceFormComponent } from '../../../shared/components/base-resou
 export class CategoryFormComponent extends BaseResourceFormComponent<Category> {
 
   constructor(protected categoryService: CategoryService, protected injector: Injector) {
-    super(injector, new Category(), categoryService, Category.fromJson)
+    super(injector, new Category(), categoryService, Category.assign);
   }
 
 
